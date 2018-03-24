@@ -1,4 +1,5 @@
 import * as actions from '../actions/actions';
+import { updateObject } from '../utilities';
 
 const initialState = {
   counter: 0
@@ -7,25 +8,16 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.INCREMENT:
-      let newState = Object.assign({}, state);
-      newState.counter = state.counter + 1;
-      return newState;
+      return updateObject(state, { counter: state.counter + 1 });
 
     case actions.DECREMENT:
-      return {
-        ...state,
-        counter: state.counter - 1
-      };
+      return updateObject(state, { counter: state.counter - 1 });
 
     case actions.ADD:
-      newState = Object.assign({}, state);
-      newState.counter = state.counter + action.value;
-      return newState;
+      return updateObject(state, { counter: state.counter + action.value });
 
     case actions.SUBTRACT:
-      newState = Object.assign({}, state);
-      newState.counter = state.counter - action.value;
-      return newState;
+      return updateObject(state, { counter: state.counter - action.value });
 
     default:
       return state;
