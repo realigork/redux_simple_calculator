@@ -12,7 +12,7 @@ import {
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
-import * as actionTypes from '../../store/actions';
+import * as actions from '../../store/actions';
 
 class Counter extends Component {
   render () {

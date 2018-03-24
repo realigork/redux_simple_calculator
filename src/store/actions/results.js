@@ -7,6 +7,7 @@ export const saveResult = (result) => {
   }
 }
 
+// async
 export const storeResult = (result) => {
   return dispatch => {
     setTimeout(() => {
